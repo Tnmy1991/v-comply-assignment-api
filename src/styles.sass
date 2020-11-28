@@ -1,1 +1,997 @@
 /* You can add global styles to this file, and also import other style files */
+body
+  font-family: 'Work Sans', sans-serif
+  background: #F5F5F5
+  color: #000000
+  font-style: normal
+  font-weight: 400
+  font-size: 14px
+  line-height: 16px
+  min-width: 360px
+  text-align: left
+
+/* typography */
+h3
+  font-size: 36px
+  line-height: 42px
+
+h4
+  font-weight: 600
+  font-size: 24px
+  line-height: 28px
+
+.main-menu
+  font-size: 16px
+  line-height: 19px
+
+.label
+  font-weight: 600
+  font-size: 12px
+  line-height: 14px
+  color: #616161
+  margin-bottom: 12px !important
+
+.section-heading
+  font-weight: 600
+  font-size: 14px
+  line-height: 16px
+  letter-spacing: 0.04em
+  text-transform: uppercase
+
+.count
+  color: #2F5CFF
+
+.highlight
+  color: #2962FF
+/* ====================== end ====================== */
+
+/* buttons */
+.btn
+  font-weight: 600
+  font-size: 12px
+  line-height: 14px
+  letter-spacing: 0.08em
+  align-items: flex-start
+  padding: 14px 12px
+  align-self: center
+  color: #FFFFFF
+  border-radius: 4px
+  text-transform: uppercase
+  
+  &:hover
+    color: #FFFFFF
+
+  &:disabled,
+  &:disabled:hover
+    background: #BDBDBD
+    border-color: #BDBDBD
+
+.btn-datatable
+  border: none
+  display: inline-block
+  padding: 5px
+  text-align: center
+  vertical-align: baseline
+  font-weight: 600
+  font-size: 12px
+  line-height: 14px
+  letter-spacing: 0.08em
+  color: #000000
+  background: transparent
+  text-transform: uppercase
+
+  &.active
+    color: #2962FF
+
+.btn-datatable-2
+  border: none
+  display: inline-block
+  padding: 5px
+  text-align: center
+  vertical-align: baseline
+  font-weight: 600
+  font-size: 12px
+  line-height: 14px
+  letter-spacing: 0.08em
+  color: #2962FF
+  background: transparent
+  text-transform: uppercase
+
+.btn-primary
+  min-height: 42px
+  background: #2962FF
+
+.btn-secondary
+  min-height: 42px
+  background: #9E9E9E
+  border-color: #9E9E9E
+
+  &:hover
+    background: #424242
+
+.btn-with-icon
+  min-width: 148px
+  min-height: 44px
+  background: #2962FF
+
+.btn-datatable i,
+.btn-datatable-2 i
+  font-size: 14px
+  vertical-align: middle
+
+.btn-disable-action,
+.btn-delete-action
+  margin-left: 25px
+
+.btn-datatable:hover,
+.btn-datatable-2:hover
+  color: #448AFF
+
+.btn-primary:hover,
+.btn-with-icon:hover
+  background: #448AFF
+
+.btn.focus,
+.btn:focus,
+button:focus
+  box-shadow: none
+  outline: 0px
+
+.btn-wide
+  width: 100%
+/* ====================== end ====================== */
+
+/* link */
+a, .count
+  color: #2962FF
+
+a:hover
+  text-decoration-line: underline
+  color: #2962FF
+
+a[class*="btn-"]:hover
+  text-decoration-line: none
+
+a:disabled
+  background: #BDBDBD
+  border-color: #BDBDBD
+/* ====================== end ====================== */
+
+/* toast alert */
+body.swal2-toast-shown .swal2-container.swal2-top-end.ui-toast-alert-container
+  top: 105px
+  right: 6px
+
+  .swal2-popup.swal2-toast
+    width: 338px
+    min-height: 78px
+    padding: 24px
+    background: #616161
+    border-radius: 4px
+
+    .swal2-close
+      color: #FFFFFF
+      font-size: 26px
+
+    .swal2-icon.swal2-question
+      border-color: #FFFFFF
+      background: #FFFFFF
+      color: #616161
+      margin-right: 22px
+
+    .swal2-title
+      font-size: 12px
+      line-height: 14px
+      color: #FFFFFF
+      text-align: left
+/* ====================== end ====================== */
+
+/* authorize */
+.auth-layout 
+  width: 100%
+  margin: 0 auto
+  
+  .auth-container 
+    width: 100%  
+    min-height: 100vh
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-box
+    display: -ms-flexbox
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    background: #f2f2f2
+
+    .auth-wrap 
+      width: 100%
+      background: #fff
+      overflow: hidden
+      display: -webkit-box
+      display: -webkit-flex
+      display: -moz-box
+      display: -ms-flexbox
+      display: flex
+      flex-wrap: wrap
+      align-items: stretch
+      flex-direction: row-reverse
+
+      .welcome-logo 
+        width: 100%
+        display: block
+        text-align: left
+        margin-bottom: 72px
+
+      .welcome-title 
+        color: #FFFFFF
+        position: absolute
+        top: 10%
+        padding-left: 141px
+
+      .welcome-title-tag 
+        color: #FFFFFF
+        position: absolute
+        top: 26%
+        padding-left: 141px
+
+      .auth-form-title 
+        width: 100%
+        display: block
+        margin-bottom: 15px
+
+      .footer-container 
+        padding-top: 36px
+        text-align: left
+
+      .bottom-container 
+        text-align: left
+        margin-bottom: 20px
+        margin-top: 60px
+        padding: 0px 85px 0px 85px
+  
+      .auth-more 
+        width: calc(100% - 560px)
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        position: relative
+        z-index: 1
+
+        &::before 
+          content: ""
+          display: block
+          position: absolute
+          z-index: -1
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          background: rgba(0,0,0,0.1)
+/* ====================== end ====================== */
+
+/* header + navigation + search bar */
+#page-topbar
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  position: fixed
+  background-color: #2962FF
+  -webkit-box-shadow: 0px 4px 19px -1px rgba(0, 0, 0, 0.34)
+  box-shadow: 0px 4px 19px -1px rgba(0, 0, 0, 0.34)
+
+  .navbar-header
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: justify
+    -webkit-box-pack: justify
+    justify-content: space-between
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    margin: 0 auto
+    height: 48px
+    padding: 0 calc(28px / 2) 0 0
+
+    .d-flex div.d-md-inline-block
+      padding-top: 14px
+      padding-left: 15px
+      color: #FFFFFF
+
+    .btn-burger-menu
+      width: 48px
+      height: 48px
+      background: #2962FF
+      border-radius: 0px
+      padding-top: 16px
+      margin-left: 15px
+
+      &:hover
+        background: #448AFF
+
+      &.active
+        color: #2962FF
+        background: #FFFFFF
+
+    .btn-profile-action
+      margin-top: 0px
+      
+      &:hover
+        color: #2962FF
+
+      span
+        background: #FFFFFF
+        text-align: center
+        width: 21px
+        height: 21px
+        border-radius: 100%
+        justify-content: center
+        align-items: center
+        font-size: 12px
+        color: #2962FF
+        letter-spacing: 0
+        padding: 0px
+        display: flex
+/* ====================== end ====================== */
+
+/* vertical menu */
+.vertical-menu
+  z-index: 15
+  position: fixed
+  width: 348px
+  left: -25px
+  top: 48px
+  bottom: 0
+  padding-top: 40px
+  background: #FFFFFF
+  box-sizing: border-box
+  -webkit-box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.24)
+  box-shadow: 10px 15px 15px rgba(0, 0, 0, 0.24)
+  -webkit-font-smoothing: antialiased
+  transform-origin: 0% 0%
+  transform: translate(-100%, 0)
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1)
+
+  .menu
+    padding: 0
+    list-style-type: none
+
+    li
+      display: block
+
+      &:hover
+        background: #C4C4C4
+
+      &.has-children 
+        &:hover ul
+          transform: none
+          display: block
+        
+        a.parent:after
+          margin-right: 25px
+          color: #616161
+          font-family: 'Material Design Icons'
+          -webkit-transition: -webkit-transform .2s
+          transition: -webkit-transform .2s
+          transition: transform .2s
+          transition: transform .2s,-webkit-transform .2s
+          font-size: 21px
+          height: 100%
+          vertical-align: middle
+          content: "\F0142"
+          margin-right: 0px
+          float: right
+          transition: transform .2s
+
+        ul
+          position: absolute
+          width: 240px
+          left: 333px
+          padding: 8px 0px 8px
+          background: #FFFFFF
+          margin-top: -43px
+          box-sizing: border-box
+          z-index: 10
+          display: none
+          -webkit-box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24)
+          box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.24)
+          -webkit-font-smoothing: antialiased
+          transform-origin: 0% 0%
+          transform: translate(-100%, 0)
+          transition: transform, display 0.5s cubic-bezier(0.77, 0.2, 0.05, 1)
+
+      a
+        position: relative
+        font-size: 16px
+        line-height: 19px
+        min-height: 56px
+        width: 100%
+        padding: 18px 16px 19px 43px
+        color: #424242
+        display: inline-block
+        vertical-align: middle
+        text-decoration: none
+        cursor: pointer
+      
+        i
+          color: #616161
+          margin-right: 5px
+
+.sidebar-enabled
+  .vertical-menu
+    transform: none
+    left: 0px
+/* ====================== end ====================== */
+
+/* body */
+.main-content
+  margin-top: 75px
+  overflow: hidden
+
+  &.update-top
+    margin-top: 75px
+
+.page-content
+  padding: 5px 24px 0px 24px
+
+.container-fluid
+  padding-left: 0px
+  padding-right: 0px
+
+.card
+  background: #FFFFFF
+  border-radius: 4px
+  width: 100%
+  min-height: calc(100vh - 80px)
+  border: none
+
+  .card-header
+    display: inline-flex
+    padding: 25px
+    background: #FFFFFF
+    border-bottom: 1px solid #E3E3E3
+    height: 92px
+
+    .btn
+      margin-left: 35px
+
+  .card-body
+    padding: 0px
+
+    .row
+      margin-left: 0px
+      margin-right: 0px
+
+.container
+  max-width: calc(100% - 230px)
+  padding-top: 34px !important
+
+.col-no-padding
+  padding-top: 0px !important
+  padding-left: 0px !important
+  padding-right: 0px !important
+  padding-bottom: 0px !important
+
+.col-divider
+  min-height: calc(100vh - 172px)
+  border-left: 1px solid #E3E3E3
+
+  @media (max-width: 1200px)
+    border-left: none
+    border-top: 1px solid #E3E3E3
+
+.mb-6
+  margin-bottom: 2rem !important
+
+.mb-8
+  margin-bottom: 3rem !important
+
+.mt-6
+  margin-top: 2rem !important
+
+.mt-8
+  margin-top: 3rem !important
+
+.ml-12px
+  margin-left: 12px !important
+
+.ml-29px
+  margin-left: 28.97px !important
+
+.mr-5px
+  margin-right: 5px !important
+
+.data-container
+  min-height: 270px
+  padding: 25px 30px
+
+  .col-no-padding
+    &:first-child
+      display: inline-flex
+
+    &:last-child
+      margin-top: 15px
+
+.title-container
+  width: 40%
+
+.toolbar-container
+  width: 60%
+  text-align: end
+
+  .btn-datatable-2:last-child
+    margin-left: 25px
+
+ul.meta-data-list
+  list-style-type: none
+  display: contents
+
+ul.meta-data-list li
+  display: inline-block
+  width: 30%
+
+.keywords-container
+  margin-top: 16px
+
+  .notification
+    margin-bottom: 8px !important
+  
+  .tag-container ul.tag-list li
+    min-width: 56px
+
+.task-wrap-container
+  padding-bottom: 6px
+  margin-bottom: 24px
+
+.info-container
+  min-height: 270px
+  padding: 25px 30px
+
+  .group-title
+    height: 30px
+    padding: 5px 20px
+    border-bottom: none
+
+  .col-no-padding
+    margin-bottom: 12px
+
+  .col-25px-padding
+    padding: 25px 25px 0px 25px
+
+  .datatable-grid-body
+    max-height: 375px
+
+  .task-wrap-container:not(:last-child)
+    border-bottom: 1px solid #E3E3E3
+
+.preferences-container
+  display: flex
+
+.preference-wrapper
+  padding-top: 10px
+  width: 25%
+
+.preference-access-wrapper
+  padding-left: 24px
+/* ====================== end ====================== */
+
+/* form */
+.form-container
+  padding: 26px 29px
+  min-height: calc(100vh - 226px)
+
+  input, select
+    height: 40px
+    font-size: 14px
+    line-height: 16px
+    color: #000000
+    border: 1px solid #BDBDBD
+    box-sizing: border-box
+    border-radius: 4px
+
+  textarea
+    height: 95px
+
+  input::placeholder,
+  textarea::placeholder
+    color: #000000
+
+  input:disabled, 
+  select:disabled, 
+  textarea:disabled
+    background: #EEEEEE
+    border: 1px solid #E0E0E0
+    box-sizing: border-box
+    border-radius: 4px
+
+.custom-select
+  background: #fff url("assets/images/dropdown-arrow.svg") no-repeat right 10px center/10px 10px
+
+label.required:after
+  content: "*"
+
+.group-container
+  max-width: 860px
+  border-radius: 4px
+  border: 1px solid #E3E3E3
+
+  .group-title
+    padding: 29px 24px
+
+  .group-options
+    padding: 12px 20px
+
+.group-title
+  width: 100%
+  height: 30px
+  border-bottom: 1px solid #E3E3E3
+
+.group-options
+  max-height: 275px
+
+
+.section-wrapper
+  line-height: 1.2
+  margin-bottom: 15px
+  padding: 0 0 10px
+  text-align: right
+  clear: both
+
+  p
+    float: left
+    text-transform: uppercase
+
+.default-dp
+  width: 120px
+  height: 120px
+  background: #FFC400
+  text-align: center
+  vertical-align: middle
+  line-height: 120px
+  font-size: 48px
+  color: #FFFFFF
+
+
+/* datatable toolbar & table */
+.col-xs-3
+  width: 30%
+  display: inline-flex
+  padding: 24px 5px 24px 25px
+
+.col-xs-9
+  width: 70%
+  padding: 20px
+
+.datatable-grid-header
+  height: 64px
+
+  .datatable-grid-header-row
+    margin-right: 0px
+    margin-left: 0px
+
+  .datatable-support-text
+    font-size: 14px
+    line-height: 16px
+    text-align: left
+    vertical-align: middle
+    color: #000000
+    margin-bottom: 0px
+  
+  .datatable-grid-pager-wrap
+    float: right
+    text-align: right
+    display: inline-flex
+
+  .datatable-grid-pager
+    display: inline-flex
+    margin-left: 20px
+  
+    .dropdown
+      margin-right: 20px
+
+label.custom-control-label
+  font-size: 12px
+  line-height: 24px
+  color: #000000
+
+.datatable-grid-header-row .custom-checkbox
+  height: 16px
+  padding: 16px 24px 17px 24px
+
+.datatable-grid-filters-wrap
+  position: absolute
+  top: 100%
+  z-index: 20
+  display: none
+  float: left
+  padding: 16px
+  text-align: left
+  min-width: 475px
+  background: #FFFFFF
+  box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.14)
+  border-radius: 4px
+
+  &.show
+    display: block
+    will-change: transform
+    top: 0px
+    transform: translate3d(-180px, 38px, 0px)
+
+.datatable-grid-filters
+  padding-top: 46px
+  padding-top: 10px
+
+.custom-control-label::before
+  border: 1px solid #BDBDBD
+
+.selectmenu
+  font-size: 12px
+  line-height: 14px
+  color: #000000
+  padding: 8px 12px 8px 12px
+  border: 1px solid #BDBDBD
+  border-radius: 4px
+  background: #fff url("assets/images/dropdown-arrow.svg") no-repeat right 10px center/10px 10px
+  min-width: 110px
+  vertical-align: middle
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+input.selectmenu::placeholder
+  color: #000000
+
+.btn-remove-filter
+  color: #757575
+
+.datatable-grid-filter
+  margin-top: 25px
+  margin-bottom: 25px
+  position: relative
+
+.data-mapping-search
+  right: 0px
+  float: right
+  margin-top: -8px
+  position: relative
+  display: inline-block
+
+  input
+    width: 240px !important
+    height: 32px !important
+    background: #EEEEEE
+    border: none !important
+
+.data-keywords-search
+  left: 50px
+  position: absolute
+  display: inline-block
+
+  input
+    background: #fff
+    width: 176px !important
+    height: 24px !important
+    border: 1px solid #BDBDBD
+
+  i
+    right: 0
+    top: 0px
+    z-index: 5
+    padding: 5px 8px
+    color: #2989bd
+    transition: 0.3s
+    position: absolute
+
+.datatable-search-field
+  height: 24px
+  width: 176px !important
+  font-size: 10px
+  line-height: 12px
+  color: #000000
+  border: 1px solid #BDBDBD
+  border-radius: 4px
+
+.datatable-search i, 
+.data-mapping-search i
+  position: absolute
+  right: 0
+  top: 0px
+  padding: 8px 8px
+  color: #2989bd
+  transition: 0.3s
+  z-index: 5
+
+.data-mapping-search span i, 
+.data-keywords-search span i
+  top: -4pxpx
+  left: auto
+  right: 0px
+  cursor: pointer
+
+.datatable-search span i
+  top: 16px
+  left: auto
+  right: 18px
+  cursor: pointer
+
+.datatable-grid-body
+  max-height: calc(100vh - 290px)
+  overflow: auto
+
+.datatable-grid
+  font-size: 14px
+  line-height: 16px
+  color: #000000
+
+  thead 
+    th
+      height: 38px
+      position: sticky
+      top: 0
+      padding: 15px
+      vertical-align: middle
+      border: none
+      font-weight: 600
+      font-size: 12px
+      line-height: 14px
+      vertical-align: middle
+      z-index: 5
+      background: #EEEEEE
+
+    tr 
+      th.sortable
+        cursor: pointer
+
+      th.not-sortable
+        cursor: default
+
+      th.action, 
+      th.select-row, 
+      th.sl_no
+        width: 65px
+
+        .custom-checkbox
+          padding-left: 36px
+
+      th.sortable.ascend:after, 
+      th.sortable.descend:after
+        font: normal normal normal 24px/1 "Material Design Icons"
+        margin-left: 10px
+        font-size: 14px
+        top: 50%
+
+      th.sortable.ascend:after
+        content: "\F0045"
+
+      th.sortable.descend:after
+        content: "\F005D"
+
+  tbody
+    tr
+      td
+        height: 46px
+        padding: 15px
+        vertical-align: middle
+        border-bottom: 1px solid #E3E3E3
+
+      td.select-row
+        width: 58px
+
+        .custom-checkbox
+          padding-left: 36px
+
+      td.status
+        &:after
+          margin-left: 13px
+          display: inline-block
+          width: 8px
+          height: 8px
+          border-radius: 50%
+
+        &.enabled:after
+          content: ""
+          background: #64DD17
+
+        &.in-progress:after
+          content: ""
+          background: #FFD600
+
+        &.disabled:after
+          content: ""
+          background: #DD2C00
+  
+    tr:hover, tr.active
+      cursor: pointer
+      background: #E3F2FD
+      border-left: 5px solid #2962FF
+      
+      td:first-child
+        padding-left: 12px
+
+    tr.disabled td:not(:nth-child(2))
+      color: #BDBDBD
+
+p.status
+  &:after
+    margin-left: 13px
+    display: inline-block
+    width: 8px
+    height: 8px
+    border-radius: 50%
+
+  &.enabled:after
+    content: ""
+    background: #64DD17
+
+  &.in-progress:after
+    content: ""
+    background: #FFD600
+
+  &.disabled:after
+    content: ""
+    background: #DD2C00
+
+.datatable-grid .dropdown-menu
+  padding-top: 6px
+  padding-bottom: 6px
+  width: 175px
+  background: #FFFFFF
+  box-shadow: 2px 6px 14px rgba(0, 0, 0, 0.14)
+  border-radius: 4px
+
+.button-wrapper
+  position: absolute
+  right: 30px
+
+.form-control
+  &.parsley-error
+    border: 1px solid #f46a6a !important
+
+  &.parsley-success
+    border: 1px solid #34c38f !important
+  
+.group-container
+  &.parsley-error
+    border: 1px solid #f46a6a !important
+
+  &.parsley-success
+    border: 1px solid #34c38f !important
+
+.form-group
+  &.parsley-error .form-control, 
+  &.parsley-error .input-tag-editor
+    border: 1px solid #f46a6a !important
+
+  &.parsley-success .form-control, 
+  &.parsley-success .input-tag-editor
+    border: 1px solid #34c38f !important
+
+.form-field-combination
+  input
+    width: 45px
+    border-right: 0px
+    border-radius: 4px 0px 0px 4px
+
+  select
+    width: 90px
+    border-radius: 0px 4px 4px 0px
+
+.parsley-errors-list
+  min-width: 200px
+  display: none
+  margin: 0
+  padding: 0
+
+.parsley-errors-list.filled
+  display: block
+
+.parsley-errors-list > li
+  font-size: 12px
+  list-style: none
+  color: #f46a6a
+  margin-top: 5px
+
+/* ====================== end ====================== */
+

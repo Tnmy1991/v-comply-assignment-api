@@ -1,0 +1,13 @@
+<div class="modal {{_class}} fade" id="{{_id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title main-menu">{{_title}}</h5>
+        </div>
+        <ng-content select="[body]"></ng-content>
+        <ng-template [ngIf]="enable_footer">
+            <ng-content select="[footer]"></ng-content>
+        </ng-template>
+      </div>
+  </div>
+</div>

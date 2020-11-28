@@ -1,0 +1,23 @@
+<ng-container *ngIf="_isHeader">
+  <div class="datatable-grid-header">
+    <div class="row datatable-grid-header-row">
+      <div class="col-xs-3">
+        <label class="datatable-support-text">{{totalRecords}} {{contectText}}</label>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<div class="datatable-grid-body table-responsive" data-simplebar>
+  <table id="{{_id}}" class="table datatable-grid">
+    <thead>
+      <tr>
+        <ng-template ngFor let-item [ngForOf]="_header">
+          <th scope="col" [ngClass]="item.additional_class">{{item.label}}</th>
+        </ng-template>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-content></ng-content>
+    </tbody>
+  </table>
+</div>

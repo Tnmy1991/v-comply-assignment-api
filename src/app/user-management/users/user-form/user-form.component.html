@@ -1,0 +1,38 @@
+<form id="user-form" [formGroup]="formGroup" autocomplete="off">
+  <div class="row">
+    <div class="col-md-7 col-sm-12 form-container">
+      <div class="section-wrapper mb-6"><p class="section-heading">User Information</p></div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="full_name" class="label required">Full Name</label>
+          <input type="text" class="form-control" id="full_name" formControlName="full_name" placeholder="Enter Full Name" data-parsley-required="true" data-parsley-group="fieldset-0">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="role" class="label required">Role</label>
+          <select class="form-control custom-select" id="role" formControlName="role" data-parsley-required="true" data-parsley-group="fieldset-0">
+            <option value="">Select Role</option>
+            <option value="approvers">Approvers</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row mb-8">
+        <div class="form-group col-md-4">
+          <label for="username" class="label required">Username</label>
+          <input type="text" class="form-control" id="username" formControlName="username" placeholder="Enter Username" data-parsley-required="true" data-parsley-group="fieldset-0">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="password" class="label required">Password</label>
+          <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password" data-parsley-required="true" data-parsley-group="fieldset-0">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="confirm_password" class="label required">Confirm Password</label>
+          <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password" placeholder="Re-type Password" data-parsley-required="true" data-parsley-group="fieldset-0" data-parsley-equalto="#password">
+        </div>
+      </div>
+      <div class="text-right">
+        <button type="button" class="btn btn-primary mr-5px" (click)="validateForm();">{{_btnLabel}}</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelForm();">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

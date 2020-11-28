@@ -1,0 +1,25 @@
+<app-ui-card>
+    <div class="card-header" header>
+        <h3>Users</h3>
+        <a class="btn btn-with-icon" routerLink="/portal/application/users/create-user"><i class="mdi mdi-plus mr-2"></i> Create User</a>
+    </div>
+    <div class="card-body" body>
+        <div class="row">
+            <div class="col-md-4 col-sm-12 col-no-padding">
+                <app-ui-datatable [_id]="'users-table'" [_header]="headerArray" [_serviceObject]="_userProvider" (_reocords)="handleEmitterData($event);">
+                    <ng-template ngFor let-user [ngForOf]="usersList" let-i="index">
+                        <tr (click)="showDetails(user);">
+                            <td>{{i+1}}</td>
+                            <td>{{user.full_name}}</td>
+                            <td>{{user.role | titlecase}}</td>
+                            <td>{{user.created_at | date:'medium'}}</td>
+                        </tr>
+                    </ng-template>
+                </app-ui-datatable>
+            </div>
+            <div class="col-md-8 col-sm-12 col-no-padding col-divider">
+                <app-user-detail [_reInitialize]="reInitialize.asObservable()"></app-user-detail>
+            </div>
+        </div>
+    </div>
+</app-ui-card>

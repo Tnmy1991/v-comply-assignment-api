@@ -1,0 +1,30 @@
+<div class="data-container" *ngIf="vendor_detail">
+  <div class="row">
+    <div class="col-md-3 col-sm-12 text-center col-no-padding">
+      <div class="display-picture">
+        <div class="rounded-circle avatar-xl default-dp">{{vendor_tag}}</div>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-no-padding">
+      <div class="section-wrapper mb-4">
+        <p class="section-heading">Vendor Information</p>
+        <a routerLink="/portal/application/vendors/workflow-detail/{{vendor_detail._id}}" class="btn-datatable-2"><i class="mdi mdi-pencil mdi-18px"></i> Manage Workflow</a>
+      </div>
+      <div class="col-sm-12 mb-4 col-no-padding">
+        <ul class="meta-data-list">
+          <li>
+            <p class="label">Vendor</p>
+            <p class="main-menu">{{vendor_detail.vendor_name}}</p>
+          </li>
+          <li>
+            <p class="label">Created On</p>
+            <p class="main-menu">{{vendor_detail.created_at | date:'medium'}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-12 mb-4 col-no-padding" *ngIf="vendor_detail.workflow_status">
+        <p class="section-heading">{{vendor_detail.workflow_status}}</p>
+      </div>
+    </div>
+  </div>
+</div>

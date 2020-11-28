@@ -1,0 +1,180 @@
+<app-ui-card>
+  <div class="card-header" header>
+    <h3 *ngIf="_vendorData">Vendor #{{_vendorData._id}}</h3>
+  </div>
+  <div class="card-body" body>
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-no-padding">
+        <div class="info-container" *ngIf="_vendorData">
+          <div class="task-wrap-container">
+            <div class="col-sm-12 col-no-padding">
+              <p class="section-heading mb-4">{{_vendorData.vendor_name}}</p>
+              <div class="keywords-container">
+                <p class="label">Created On</p>
+                <p class="main-menu">{{_vendorData.created_at | date:'medium'}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="task-wrap-container">
+            <div class="col-sm-12 col-no-padding">
+              <p class="section-heading mb-4">Sequential Approvers</p>
+              <ng-template ngFor let-user [ngForOf]="_vendorData.sequential_approvers">
+                <div class="keywords-container">
+                  <p class="main-menu">{{user.full_name}}</p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+          <div class="task-wrap-container">
+            <div class="col-sm-12 col-no-padding">
+              <p class="section-heading mb-4">Round-robin Approvers</p>
+              <ng-template ngFor let-user [ngForOf]="_vendorData.round_robin_approvers">
+                <div class="keywords-container">
+                  <p class="main-menu">{{user.full_name}}</p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+          <div class="task-wrap-container">
+            <div class="col-sm-12 col-no-padding">
+              <p class="section-heading mb-4">Any one Approvers</p>
+              <ng-template ngFor let-user [ngForOf]="_vendorData.any_one_approvers">
+                <div class="keywords-container">
+                  <p class="main-menu">{{user.full_name}}</p>
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 col-no-padding col-divider">
+        <div class="data-container">
+          <div class="row">
+            <div class="col-sm-12 col-no-padding">
+              <div class="section-wrapper">
+                <p class="section-heading">Workflow Status</p>
+                <button type="button" class="btn-datatable-2" (click)="fetchWorkflow();"><i class="mdi mdi-reload mdi-18px"></i> Reload Workflow</button>
+              </div>
+            </div>
+            <div class="col-sm-12 col-no-padding" *ngIf="_showWorkflow">
+              <ng-template [ngIf]="statusLog.length > 0">
+                <ng-template ngFor let-log [ngForOf]="statusLog" let-i="index">
+                  <p class="section-heading">Level {{i+1}} ({{log.type_of_approval}})</p>
+                  <table class="table mb-8">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Users</th>
+                        <th scope="col">Approval Action</th>
+                        <th scope="col">Workflow Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-template ngFor let-user [ngForOf]="log.approvers">
+                        <tr>
+                          <td>{{user.user}}</td>
+                          <ng-template [ngIf]="user.approval_action === '--' && _currUser === user._id && user.access">
+                            <td>
+                              <select class="form-control custom-select" (change)="updateLog($event, log.type)">
+                                <option *ngFor="let item of _actions;" [value]="item">{{item}}</option>
+                              </select>
+                            </td>
+                          </ng-template>
+                          <ng-template [ngIf]="user.approval_action === '--' && _currUser === user._id && !user.access && log.type === 'sequential'">
+                            <td>{{user.approval_action}}</td>
+                          </ng-template>
+                          <ng-template [ngIf]="user.approval_action !== '--' && _currUser === user._id && log.type !== 'any-one'">
+                            <td>{{user.approval_action}}</td>
+                          </ng-template>
+                          <ng-template [ngIf]="user.approval_action && _currUser === user._id && log.type === 'any-one' && !user.access">
+                            <td>{{user.approval_action}}</td>
+                          </ng-template>
+                          <ng-template [ngIf]="_currUser !== user._id"><td>{{user.approval_action}}</td></ng-template>
+                          <td>{{user.workflow_status}}</td>
+                        </tr>
+                      </ng-template>
+                    </tbody>
+                  </table>
+                </ng-template>
+              </ng-template>
+
+              <ng-template [ngIf]="_finalResult"><p class="section-heading">{{_finalResult}}</p></ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-ui-card>
+<!-- <ng-template #sequenceLevel>
+  <p class="section-heading">Sequential Approvals</p>
+  <table class="table" *ngIf="_vendorData">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Users</th>
+        <th scope="col">Approval Action</th>
+        <th scope="col">Workflow Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-user [ngForOf]="_vendorData.sequential_approvers">
+        <tr>
+          <td>{{user.full_name}}</td>
+          <td>
+            <ng-template [ngIf]="_currUser == user._id">
+              <ng-template [ngIf]="!verifyApproverAction('sequential', user._id)">{{getApproverAction('sequential', user._id)}}</ng-template>
+              <ng-template [ngIf]="verifyApproverAction('sequential', user._id)">
+                <select class="form-control custom-select" (change)="updateLog($event, 'sequential')">
+                  <option *ngFor="let item of _actions;" [value]="item">{{item}}</option>
+                </select>
+              </ng-template>
+            </ng-template>
+            <ng-template [ngIf]="_currUser != user._id">--</ng-template>
+          </td>
+          <td>--</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #roundRobinLevel>
+  <p class="section-heading">Round-robin Approvals</p>
+  <table class="table" *ngIf="_vendorData">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Users</th>
+        <th scope="col">Approval Action</th>
+        <th scope="col">Workflow Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-user [ngForOf]="_vendorData.round_robin_approvers">
+        <tr>
+          <td>{{user.full_name}}</td>
+          <td>--</td>
+          <td>--</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #anyOneLevel>
+  <p class="section-heading">Any One Approvals</p>
+  <table class="table"  *ngIf="_vendorData">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Users</th>
+        <th scope="col">Approval Action</th>
+        <th scope="col">Workflow Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-template ngFor let-user [ngForOf]="_vendorData.any_one_approvers">
+        <tr>
+          <td>{{user.full_name}}</td>
+          <td>--</td>
+          <td>--</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</ng-template> -->

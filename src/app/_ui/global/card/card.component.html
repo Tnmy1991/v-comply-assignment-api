@@ -1,0 +1,6 @@
+<div class="card">
+  <ng-template [ngIf]="enableHeader">
+    <ng-content select="[header]"></ng-content>
+  </ng-template>
+  <ng-content select="[body]"></ng-content>
+</div>

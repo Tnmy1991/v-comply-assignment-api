@@ -1,0 +1,30 @@
+<div class="group-title">
+  <label class="section-heading">Assign {{_title}} Approvers</label>
+</div>
+<div [ngClass]="_datatableContainer" data-simplebar>
+  <table class="table datatable-grid">
+    <ng-container *ngIf="headerArray.length > 0">
+      <thead>
+        <tr>
+          <ng-template ngFor let-item [ngForOf]="headerArray">
+            <th scope="col" [ngClass]="item.additional_class">{{item.label}}</th>
+          </ng-template>
+        </tr>
+      </thead>
+    </ng-container>
+    <tbody>
+      <ng-template ngFor let-user [ngForOf]="dataList" let-i="index">
+        <tr>
+          <td class="select-row">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="assign-{{_title}}-approvers-{{user._id}}" value="{{user._id}}" (click)="selectRow($event);">
+              <label class="custom-control-label" for="assign-{{_title}}-approvers-{{user._id}}"></label>
+            </div>
+          </td>
+          <td>{{user.full_name}}</td>
+          <td>{{user.role | titlecase}}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+</div>

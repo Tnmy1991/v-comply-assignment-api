@@ -1,0 +1,18 @@
+<header id="page-topbar">
+  <div class="navbar-header">
+    <div class="d-flex">
+      <button type="button" class="btn btn-sm btn-burger-menu" id="burger-menu-btn"><i class="mdi mdi-menu mdi-24px"></i></button>
+    </div>
+    <div class="d-flex">
+      <div class="dropdown d-inline-block">
+        <button type="button" class="btn btn-sm btn-profile-action" id="navbar-user-dropdown" title="Hi, {{_displayName}}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span>{{_displayName.charAt(0)}}</span>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item text-danger" href="javascript:void(0);" (click)="logout();"><i class="mdi mdi-logout mr-1 text-danger"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<app-ui-burger-menu></app-ui-burger-menu>

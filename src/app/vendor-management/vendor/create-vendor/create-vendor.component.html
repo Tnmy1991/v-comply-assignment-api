@@ -1,0 +1,38 @@
+<app-ui-card>
+  <div class="card-header" header>
+    <h3>Create New Vendor</h3>
+  </div>
+  <div class="card-body" body>
+    <form id="vendor-form" [formGroup]="formGroup" autocomplete="off">
+      <div class="row">
+        <div class="col-md-9 col-sm-12 form-container">
+          <div class="section-wrapper mb-6"><p class="section-heading">Vendor Information</p></div>
+          <div class="form-row mb-4">
+            <div class="form-group col-md-4">
+              <label for="vendor_name" class="label required">Vendor Name</label>
+              <input type="text" class="form-control" id="vendor_name" formControlName="vendor_name" placeholder="Enter Vendor Name" data-parsley-required="true" data-parsley-group="fieldset-0">
+            </div>
+          </div>
+          <div class="form-row mb-8">
+            <div class="form-group sequential_approvers col-md-4">
+              <app-ui-data-selection [_title]="'Sequential'" (_approversArray)="handleEmitter($event, 'sequential_approvers')"></app-ui-data-selection>
+              <input type="text" id="sequential_approvers" formControlName="sequential_approvers" data-parsley-required="true" data-parsley-group="fieldset-0" data-parsley-class-handler=".sequential_approvers" style="display: none;">
+            </div>
+            <div class="form-group round_robin_approvers col-md-4">
+              <app-ui-data-selection [_title]="'Round Robin'" (_approversArray)="handleEmitter($event, 'round_robin_approvers')"></app-ui-data-selection>
+              <input type="text" id="round_robin_approvers" formControlName="round_robin_approvers" data-parsley-required="true" data-parsley-group="fieldset-0" data-parsley-class-handler=".round_robin_approvers" style="display: none;">
+            </div>
+            <div class="form-group any_one_approvers col-md-4">
+              <app-ui-data-selection [_title]="'Any One'" (_approversArray)="handleEmitter($event, 'any_one_approvers')"></app-ui-data-selection>
+              <input type="text" id="any_one_approvers" formControlName="any_one_approvers" data-parsley-required="true" data-parsley-group="fieldset-0" data-parsley-class-handler=".any_one_approvers" style="display: none;">
+            </div>
+          </div>
+          <div class="text-right">
+            <button type="button" class="btn btn-primary mr-5px" (click)="validateForm();">Create Vendor</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelForm();">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</app-ui-card>

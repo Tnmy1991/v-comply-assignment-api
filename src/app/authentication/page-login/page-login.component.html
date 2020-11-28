@@ -1,0 +1,12 @@
+<form id="signin-form" class="login-form" [formGroup]="_formGroup" autocomplete="off" (ngSubmit)="authorize();">
+  <h4 class="auth-form-title">Sign In</h4>
+  <div class="form-group">
+    <label for="username" class="label">Username</label>
+    <input type="text" class="form-control" id="username" formControlName="username" placeholder="Enter Username" data-parsley-required="true" data-parsley-group="fieldset-0">
+  </div>
+  <div class="form-group">
+    <label for="password" class="label">Password</label>
+    <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password" data-parsley-required="true" data-parsley-group="fieldset-0">
+  </div>
+  <app-ui-button [type]="'submit'" [id]="'btn-sign-in'" [class]="'btn btn-primary btn-wide'">Sign In</app-ui-button>
+</form>

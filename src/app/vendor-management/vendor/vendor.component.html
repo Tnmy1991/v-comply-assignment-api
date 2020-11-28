@@ -1,0 +1,24 @@
+<app-ui-card>
+  <div class="card-header" header>
+    <h3>Vendors</h3>
+    <a class="btn btn-with-icon" routerLink="/portal/application/vendors/create-vendor"><i class="mdi mdi-plus mr-2"></i> Create Vendor</a>
+  </div>
+  <div class="card-body" body>
+    <div class="row">
+      <div class="col-md-3 col-sm-12 col-no-padding">
+        <app-ui-datatable [_id]="'vendors-table'" [_header]="headerArray" [_serviceObject]="_vendorProvider" (_reocords)="handleEmitterData($event);">
+          <ng-template ngFor let-vendor [ngForOf]="vendorsList" let-i="index">
+            <tr (click)="showDetails(vendor);">
+              <td>{{i+1}}</td>
+              <td>{{vendor.vendor_name}}</td>
+              <td>{{vendor.created_at | date:'medium'}}</td>
+            </tr>
+          </ng-template>
+        </app-ui-datatable>
+      </div>
+      <div class="col-md-9 col-sm-12 col-no-padding col-divider">
+        <app-vendor-detail [_reInitialize]="reInitialize.asObservable()"></app-vendor-detail>
+      </div>
+    </div>
+  </div>
+</app-ui-card>

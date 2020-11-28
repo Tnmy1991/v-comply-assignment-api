@@ -1,0 +1,38 @@
+<div class="data-container" *ngIf="user_detail">
+  <div class="row">
+    <div class="col-md-3 col-sm-12 text-center col-no-padding">
+      <div class="display-picture">
+        <div class="rounded-circle avatar-xl default-dp">{{user_tag}}</div>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-12 col-no-padding">
+      <div class="section-wrapper mb-4">
+        <p class="section-heading">User Information</p>
+      </div>
+      <div class="col-sm-12 mb-4 col-no-padding">
+        <ul class="meta-data-list">
+          <li>
+            <p class="label">User ID</p>
+            <p class="main-menu">{{user_detail._id}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-12 mb-4 col-no-padding">
+        <ul class="meta-data-list">
+          <li>
+            <p class="label">Full Name</p>
+            <p class="main-menu">{{user_detail.full_name}}</p>
+          </li>
+          <li>
+            <p class="label">Role</p>
+            <p class="main-menu highlight">{{user_detail.role | titlecase}}</p>
+          </li>
+          <li>
+            <p class="label">Created On</p>
+            <p class="main-menu">{{user_detail.created_at | date:'medium'}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
